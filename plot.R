@@ -14,7 +14,7 @@ library(ComplexHeatmap)
 library(circlize)
 
 plot.nrc <- function(width, height) {
-  nrc_mat <- as.matrix(read.table('nrc.tsv', header = TRUE))
+  nrc_mat <- as.matrix(read.table('result/nrc.tsv', header = TRUE))
   
   H <- Heatmap(nrc_mat)
 
@@ -32,8 +32,8 @@ plot.nrc <- function(width, height) {
   )
 
   # pdf("nrc.pdf", width = width, height = height)
-  # draw(a)
+  draw(a)
   # dev.off()
 }
 
-plot.nrc(40, 20)
+plot.nrc(30, 15)
