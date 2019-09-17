@@ -19,6 +19,12 @@ def execute(cmd):
 
 
 if find_simil_seqs:
+    if (os.path.exists('log')):
+        os.remove('log')
+    for file in os.listdir(dataset_path):
+        if (file.endswith('.co')):
+            os.remove(dataset_path + file)
+
     in_file_path = dataset_path
     in_file_list = os.listdir(in_file_path)
     out_file_path = result_path
@@ -47,11 +53,11 @@ if find_simil_seqs:
                     line_list = line.split()
                     if len(line_list) > 5:
                         out_file.write('\t' + str(line_list[5]))
+            
+            if (os.path.exists(tar + '.co')):
+                os.remove(tar + '.co')
         out_file.write('\n')
-
+        
     if (os.path.exists('log')):
         os.remove('log')
-    for file in in_file_list:
-        if (file.endswith('.co')):
-            os.remove(dataset_path + file)
     print('Finished.')
