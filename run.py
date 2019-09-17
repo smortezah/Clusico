@@ -24,16 +24,17 @@ if find_simil_seqs:
     for file in os.listdir(dataset_path):
         if (file.endswith('.co')):
             os.remove(dataset_path + file)
+    if (not os.path.exists(result_path)):
+        os.mkdir(result_path)
 
     in_file_path = dataset_path
     in_file_list = os.listdir(in_file_path)
-    out_file_path = result_path
     out_file_name = 'nrc.tsv'
 
     print('Finding similar sequences ...')
-    if os.path.exists(out_file_path + out_file_name):
-        os.remove(out_file_path + out_file_name)
-    out_file = open(out_file_path + out_file_name, "w")
+    if os.path.exists(result_path + out_file_name):
+        os.remove(result_path + out_file_name)
+    out_file = open(result_path + out_file_name, "w")
     for file in in_file_list:
         out_file.write('\t' + file[:-4])
     out_file.write('\n')
