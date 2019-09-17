@@ -22,7 +22,7 @@ if find_simil_seqs:
     in_file_path = dataset_path
     in_file_list = os.listdir(in_file_path)
     out_file_path = result_path
-    out_file_name = 'ent.tsv'
+    out_file_name = 'nrc.tsv'
 
     print('Finding similar sequences ...')
     if os.path.exists(out_file_path + out_file_name):
@@ -39,7 +39,7 @@ if find_simil_seqs:
             ref = in_file_path + in_file_list[i]
             tar = in_file_path + in_file_list[j]
             execute(geco + '-rm 6:1:0:0/0 -rm 10:10:1:0/0 -rm 14:50:1:3/10 ' +
-                    '-c 30 -g 0.95 -r ' + ref + ' ' + tar + ' > log')
+                    '-c 30 -g 0.95 -v -r ' + ref + ' ' + tar + ' > log')
 
             with open('log', 'r') as log_file:
                 for line in log_file:
