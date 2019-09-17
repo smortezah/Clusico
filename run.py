@@ -38,8 +38,9 @@ if find_simil_seqs:
         for j in range(first, len(in_file_list)):
             ref = in_file_path + in_file_list[i]
             tar = in_file_path + in_file_list[j]
+            # MUST NOT use '-v' option with GeCo
             execute(geco + '-rm 6:1:0:0/0 -rm 10:10:1:0/0 -rm 14:50:1:3/10 ' +
-                    '-c 30 -g 0.95 -v -r ' + ref + ' ' + tar + ' > log')
+                    '-c 30 -g 0.95 -r ' + ref + ' ' + tar + ' > log')
 
             with open('log', 'r') as log_file:
                 for line in log_file:
@@ -48,7 +49,9 @@ if find_simil_seqs:
                         out_file.write('\t' + str(line_list[5]))
         out_file.write('\n')
 
-    for file in ["log", "*.co"]:
-        if os.path.exists(file):
-            os.remove(file)
+    if (os.path.exists('log')):
+        os.remove('log')
+    for file in in_file_list:
+        if (file.endswith('.co')):
+            os.remove(dataset_path + file)
     print('Finished.')
