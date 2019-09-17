@@ -24,6 +24,7 @@ if find_simil_seqs:
     out_file_path = result_path
     out_file_name = 'ent.tsv'
 
+    print('Finding similar sequences ...')
     if os.path.exists(out_file_path + out_file_name):
         os.remove(out_file_path + out_file_name)
     out_file = open(out_file_path + out_file_name, "w")
@@ -50,3 +51,4 @@ if find_simil_seqs:
     for file in ["log", "*.co"]:
         if os.path.exists(file):
             os.remove(file)
+    print('Finished.')
