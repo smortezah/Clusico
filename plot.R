@@ -31,6 +31,8 @@ plot.nrc <- function(width, height) {
       hcl.colors(11, palette = "spectral")
     ),
     column_title = "Normalized relative compression (NRC)", 
+    row_split = rep(c("A", "B", "C"), 15),
+    # column_split = rep(c("A", "B", "C"), 15),
     # row_km = 3, row_km_repeats = 100,
     # column_km = 3, column_km_repeats = 100
   )
