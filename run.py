@@ -26,6 +26,7 @@ if find_simil_seqs:
             os.remove(dataset_path + file)
     if (not os.path.exists(result_path)):
         os.mkdir(result_path)
+    execute('sudo chmod -R 777 bin')
 
     in_file_path = dataset_path
     in_file_list = os.listdir(in_file_path)
