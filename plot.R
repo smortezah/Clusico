@@ -6,6 +6,7 @@ library(ggplotify)
 library(factoextra)
 library(cluster)
 # library(biclust)
+library(svglite)
 theme_set(theme_bw())
 
 library(devtools)
@@ -20,8 +21,8 @@ plot.nrc <- function(width, height) {
 
   a <- Heatmap(
     nrc_mat,
-    row_order = row_order(H),
-    column_order = column_order(H),
+    # row_order = row_order(H),
+    # column_order = column_order(H),
     row_names_side = c("left"),
     name = "NRC",
     col = colorRamp2(
@@ -30,16 +31,15 @@ plot.nrc <- function(width, height) {
       seq(0, 2, 0.2),
       hcl.colors(11, palette = "spectral")
     ),
-    column_title = "Normalized relative compression (NRC)", 
-    row_split = rep(c("A", "B", "C"), 15),
-    # column_split = rep(c("A", "B", "C"), 15),
+    # column_title = "Normalized relative compression (NRC)", 
     # row_km = 3, row_km_repeats = 100,
     # column_km = 3, column_km_repeats = 100
   )
 
   # pdf("nrc.pdf", width = width, height = height)
+  svg("nrc.svg", width = width, height = height)
   draw(a)
-  # dev.off()
+  dev.off()
 }
 
-plot.nrc(30, 15)
+plot.nrc(11, 10)
