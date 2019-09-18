@@ -56,7 +56,7 @@ if find_simil_seqs:
             for line in log_file:
                 line_list = line.split()
                 if len(line_list) > 5:
-                    NRC = line_list[15]
+                    NRC = float(line_list[15])
                     if NRC > 1:
                         NRC = 1
                     out_file.write('\t' + str(NRC))
