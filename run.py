@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 find_simil_seqs = False
-make_nrc_ave = True
+make_nrc_ave = False
 
 
 if os.name == 'posix':
@@ -71,8 +71,11 @@ def build_nrc_ave(nrc_mat):
     num_files = len(nrc_mat)
     ave_mat = [[0 for x in range(num_files)] for y in range(num_files)]
     for i in range(0, num_files):
-        for j in range(i+1, num_files):
-            ave_mat[i][j] = ave_mat[j][i] = (nrc_mat[i][j] + nrc_mat[j][i]) / 2
+        for j in range(i, num_files):
+            if i == j:
+                ave_mat[i][j] = nrc_mat[i][j]
+            else:
+                ave_mat[i][j] = ave_mat[j][i] = (nrc_mat[i][j] + nrc_mat[j][i]) / 2
     return ave_mat
 
 
@@ -82,5 +85,17 @@ if make_nrc_ave:
     nrc_file.seek(0)
     nrc_mat = np.genfromtxt(nrc_file, skip_header=True,
                             usecols=range(1, len(header) + 1))
+    nrc_ave_name = 'nrc_ave.tsv'
+    if os.path.exists(result_path + nrc_ave_name):
+        os.remove(result_path + nrc_ave_name)
 
-    print(build_nrc_ave(nrc_mat))
+    nrc_ave = build_nrc_ave(nrc_mat)
+    nrc_ave_file = open(result_path + nrc_ave_name, "w")
+    for i in range(len(header)):
+        nrc_ave_file.write('\t' + header[i])
+    nrc_ave_file.write('\n')
+    for i in range(len(header)):
+        nrc_ave_file.write(header[i])
+        for j in range(len(header)):
+            nrc_ave_file.write('\t' + str(nrc_ave[i][j]))
+        nrc_ave_file.write('\n')
