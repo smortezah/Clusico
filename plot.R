@@ -7,6 +7,7 @@ library(factoextra)
 library(cluster)
 # library(biclust)
 library(svglite)
+library(dendextend)
 theme_set(theme_bw())
 
 library(devtools)
@@ -21,6 +22,10 @@ plot.nrc.clus <- function(width, height) {
   cl = kmeans(nrc_mat, centers = 1)$cluster
   pa = cluster::pam(nrc_mat, k = 3)
   group = kmeans(t(nrc_mat), centers = 3)$cluster
+  row_dend = as.dendrogram(hclust(dist(nrc_mat)))
+  column_dend = as.dendrogram(hclust(dist(t(nrc_mat))))
+  row_dend = color_branches(row_dend, k = 3)
+  column_dend = color_branches(column_dend, k = 3)
 
   a <- Heatmap(
     nrc_mat,
@@ -35,14 +40,16 @@ plot.nrc.clus <- function(width, height) {
     # column_title = "Normalized relative compression (NRC)", 
     # clustering_distance_rows = "pearson",
     # clustering_method_rows = "single",
-    cluster_rows = function(x) fastcluster::hclust(dist(x)),
-    cluster_columns = function(x) fastcluster::hclust(dist(x)),
+    # cluster_rows = row_dend,
+    # cluster_columns = column_dend,
+    # cluster_rows = function(x) fastcluster::hclust(dist(x)),
+    # cluster_columns = function(x) fastcluster::hclust(dist(x)),
     # cluster_columns = cluster_within_group(nrc_mat, group),
     # row_km = 3, row_km_repeats = 100,
     # column_km = 3, column_km_repeats = 100,
     # row_split = paste0("pam", pa$clustering),
     # column_split = paste0("pam", pa$clustering),
-    # show_row_dend = FALSE,
+    show_row_dend = FALSE,
   )
 
   # pdf("nrc.pdf", width = width, height = height)
