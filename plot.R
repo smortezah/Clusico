@@ -38,9 +38,10 @@ plot.nrc.clus <- function(width, height) {
       hcl.colors(11, palette = "spectral")
     ),
     # column_title = "Normalized relative compression (NRC)", 
-    clustering_distance_rows = "pearson",
-    clustering_distance_columns = "pearson",
-    # clustering_method_rows = "single",
+    # clustering_distance_rows = "pearson",
+    # clustering_distance_columns = "pearson",
+    # clustering_method_rows = "ward.D",
+    # clustering_method_columns = "ward.D",
     # cluster_rows = row_dend,
     # cluster_columns = column_dend,
     # cluster_rows = function(x) fastcluster::hclust(dist(x)),
@@ -90,5 +91,5 @@ plot.nrc.ave.clus <- function(width, height) {
   # dev.off()
 }
 
-# plot.nrc.clus(11, 10)
-plot.nrc.ave.clus(11, 10)
+plot.nrc.clus(11, 10)
+# plot.nrc.ave.clus(11, 10)
