@@ -3,7 +3,7 @@ import shutil
 import matplotlib.pyplot as plt
 import numpy as np
 
-find_simil_seqs = False
+find_simil_seqs = True
 make_nrc_ave = False
 
 
@@ -52,11 +52,11 @@ if find_simil_seqs:
             execute(geco + '-rm 6:1:0:0/0 -rm 10:10:1:0/0 -rm 14:50:1:3/10 ' +
                     '-c 30 -g 0.95 -r ' + ref + ' ' + tar + ' > log')
 
-            with open('log', 'r') as log_file:
-                for line in log_file:
-                    line_list = line.split()
-                    if len(line_list) > 5:
-                        out_file.write('\t' + str(line_list[5]))
+            log_file = open('log', 'r')
+            for line in log_file:
+                line_list = line.split()
+                if len(line_list) > 5:
+                    out_file.write('\t' + str(line_list[15]))
             
             if os.path.exists(tar + '.co'):
                 os.remove(tar + '.co')
@@ -80,6 +80,7 @@ def build_nrc_ave(nrc_mat):
 
 
 if make_nrc_ave:
+    print('Making NRC average ...')
     nrc_file = open('result/nrc.tsv')
     header = nrc_file.readline().split()
     nrc_file.seek(0)
@@ -99,3 +100,4 @@ if make_nrc_ave:
         for j in range(len(header)):
             nrc_ave_file.write('\t' + str(nrc_ave[i][j]))
         nrc_ave_file.write('\n')
+    print('Finished.')
