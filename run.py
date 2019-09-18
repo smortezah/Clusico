@@ -56,7 +56,10 @@ if find_simil_seqs:
             for line in log_file:
                 line_list = line.split()
                 if len(line_list) > 5:
-                    out_file.write('\t' + str(line_list[15]))
+                    NRC = str(line_list[15])
+                    if NRC > 1:
+                        NRC = 1
+                    out_file.write('\t' + NRC)
             
             if os.path.exists(tar + '.co'):
                 os.remove(tar + '.co')
