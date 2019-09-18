@@ -38,7 +38,8 @@ plot.nrc.clus <- function(width, height) {
       hcl.colors(11, palette = "spectral")
     ),
     # column_title = "Normalized relative compression (NRC)", 
-    # clustering_distance_rows = "pearson",
+    clustering_distance_rows = "pearson",
+    clustering_distance_columns = "pearson",
     # clustering_method_rows = "single",
     # cluster_rows = row_dend,
     # cluster_columns = column_dend,
@@ -76,8 +77,11 @@ plot.nrc.ave.clus <- function(width, height) {
       hcl.colors(11, palette = "spectral")
     ),
     # column_title = "Normalized relative compression (NRC)", 
+    clustering_distance_rows = "pearson",
+    clustering_distance_columns = "pearson",
     # row_km = 3, row_km_repeats = 100,
-    # column_km = 3, column_km_repeats = 100
+    # column_km = 3, column_km_repeats = 100,
+    show_row_dend = FALSE,
   )
   
   # pdf("nrc.pdf", width = width, height = height)
@@ -86,5 +90,5 @@ plot.nrc.ave.clus <- function(width, height) {
   # dev.off()
 }
 
-plot.nrc.clus(11, 10)
-# plot.nrc.ave.clus(11, 10)
+# plot.nrc.clus(11, 10)
+plot.nrc.ave.clus(11, 10)
