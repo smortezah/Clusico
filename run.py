@@ -72,7 +72,7 @@ def build_nrc_ave(nrc_mat):
     ave_mat = [[0 for x in range(num_files)] for y in range(num_files)]
     for i in range(0, num_files):
         for j in range(i+1, num_files):
-            ave_mat[i][j] = ave_mat[j][i] = (ave_mat[i][j] + ave_mat[j][i]) / 2
+            ave_mat[i][j] = ave_mat[j][i] = (nrc_mat[i][j] + nrc_mat[j][i]) / 2
     return ave_mat
 
 
@@ -83,4 +83,4 @@ if make_nrc_ave:
     nrc_mat = np.genfromtxt(nrc_file, skip_header=True,
                             usecols=range(1, len(header) + 1))
 
-    print(nrc_mat)
+    print(build_nrc_ave(nrc_mat))
