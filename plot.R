@@ -35,20 +35,20 @@ plot.nrc.clus <- function(width, height) {
     # column_title = "Normalized relative compression (NRC)", 
     # clustering_distance_rows = "pearson",
     # clustering_method_rows = "single",
-    # cluster_rows = function(x) fastcluster::hclust(dist(x)),
-    # cluster_columns = function(x) fastcluster::hclust(dist(x)),
+    cluster_rows = function(x) fastcluster::hclust(dist(x)),
+    cluster_columns = function(x) fastcluster::hclust(dist(x)),
     # cluster_columns = cluster_within_group(nrc_mat, group),
     # row_km = 3, row_km_repeats = 100,
     # column_km = 3, column_km_repeats = 100,
     # row_split = paste0("pam", pa$clustering),
     # column_split = paste0("pam", pa$clustering),
-    show_row_dend = FALSE,
+    # show_row_dend = FALSE,
   )
 
   # pdf("nrc.pdf", width = width, height = height)
-  svg("nrc.svg", width = width, height = height)
+  # svg("nrc.svg", width = width, height = height)
   draw(a)
-  dev.off()
+  # dev.off()
 }
 
 plot.nrc.ave.clus <- function(width, height) {
@@ -74,10 +74,10 @@ plot.nrc.ave.clus <- function(width, height) {
   )
   
   # pdf("nrc.pdf", width = width, height = height)
-  svg("nrc_ave.svg", width = width, height = height)
+  # svg("nrc_ave.svg", width = width, height = height)
   draw(a)
-  dev.off()
+  # dev.off()
 }
 
 plot.nrc.clus(11, 10)
-plot.nrc.ave.clus(11, 10)
+# plot.nrc.ave.clus(11, 10)
