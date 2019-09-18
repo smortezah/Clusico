@@ -19,6 +19,7 @@ plot.nrc.clus <- function(width, height) {
   
   H <- Heatmap(nrc_mat)
   cl = kmeans(nrc_mat, centers = 1)$cluster
+  pa = cluster::pam(nrc_mat, k = 3)
 
   a <- Heatmap(
     nrc_mat,
@@ -27,14 +28,14 @@ plot.nrc.clus <- function(width, height) {
     row_names_side = c("left"),
     name = "NRC",
     col = colorRamp2(
-      seq(0, 2, 0.2),
+      seq(0, 1, 0.1),
       hcl.colors(11, palette = "spectral")
     ),
     # column_title = "Normalized relative compression (NRC)", 
-    # row_km = 3, row_km_repeats = 100,
-    # column_km = 3, column_km_repeats = 100,
-    # row_split = cbind(cl, rep(c("A", "B", "C"), 15)),
-    # column_split = cbind(cl, rep(c("A", "B", "C"), 15)),
+    row_km = 3, row_km_repeats = 100,
+    column_km = 3, column_km_repeats = 100,
+    # row_split = paste0("pam", pa$clustering),
+    # column_split = paste0("pam", pa$clustering),
   )
 
   # pdf("nrc.pdf", width = width, height = height)
@@ -57,7 +58,7 @@ plot.nrc.ave.clus <- function(width, height) {
     row_names_side = c("left"),
     name = "NRC",
     col = colorRamp2(
-      seq(0, 2, 0.2),
+      seq(0, 1, 0.1),
       hcl.colors(11, palette = "spectral")
     ),
     # column_title = "Normalized relative compression (NRC)", 
@@ -66,10 +67,10 @@ plot.nrc.ave.clus <- function(width, height) {
   )
   
   # pdf("nrc.pdf", width = width, height = height)
-  svg("nrc_ave.svg", width = width, height = height)
+  # svg("nrc_ave.svg", width = width, height = height)
   draw(a)
-  dev.off()
+  # dev.off()
 }
 
-plot.nrc.clus(11, 10)
-# plot.nrc.ave.clus(11, 10)
+# plot.nrc.clus(11, 10)
+plot.nrc.ave.clus(11, 10)

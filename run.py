@@ -3,7 +3,7 @@ import shutil
 import matplotlib.pyplot as plt
 import numpy as np
 
-find_simil_seqs = True
+find_simil_seqs = False
 make_nrc_ave = False
 
 
