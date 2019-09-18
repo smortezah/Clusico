@@ -1,6 +1,5 @@
 import os
 import shutil
-import matplotlib.pyplot as plt
 import numpy as np
 
 find_simil_seqs = True
@@ -11,9 +10,10 @@ if os.name == 'posix':
     sep = '/'
 elif os.name == 'nt':
     sep = '\\'
-dataset_path = 'dataset' + sep
-result_path = 'result' + sep
-geco = 'bin/GeCo '
+dataset_path = '..' + sep + 'dataset' + sep
+result_path = '..' + sep + 'result' + sep
+bin_path = '..' + sep + 'bin' + sep
+geco = bin_path + 'GeCo '
 
 
 def execute(cmd):
@@ -26,9 +26,9 @@ if find_simil_seqs:
     for file in os.listdir(dataset_path):
         if file.endswith('.co'):
             os.remove(dataset_path + file)
-    if (not os.path.exists(result_path)):
+    if not os.path.exists(result_path):
         os.mkdir(result_path)
-    execute('sudo chmod -R 777 bin')
+    execute('sudo chmod -R 777 ' + bin_path)
 
     in_file_path = dataset_path
     in_file_list = os.listdir(in_file_path)
@@ -84,7 +84,7 @@ def build_nrc_ave(nrc_mat):
 
 if make_nrc_ave:
     print('Making NRC average ...')
-    nrc_file = open('result/nrc.tsv')
+    nrc_file = open(result_path + 'nrc.tsv')
     header = nrc_file.readline().split()
     nrc_file.seek(0)
     nrc_mat = np.genfromtxt(nrc_file, skip_header=True,

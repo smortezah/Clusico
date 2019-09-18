@@ -1,16 +1,16 @@
 library(ggplot2)
-library(reshape2)
-library(scales)
-library(ggpubr)
-library(ggplotify)
+# library(reshape2)
+# library(scales)
+# library(ggpubr)
+# library(ggplotify)
 library(factoextra)
 library(cluster)
 # library(biclust)
 library(svglite)
 library(dendextend)
-library(FactoMineR)
+# library(FactoMineR)
 library(colorspace)
-# theme_set(theme_bw())
+theme_set(theme_bw())
 
 library(devtools)
 # install_github("jokergoo/ComplexHeatmap")
@@ -18,7 +18,7 @@ library(ComplexHeatmap)
 library(circlize)
 
 plot.nrc <- function(width, height) {
-  nrc_mat <- as.matrix(read.table('result/nrc.tsv', header = TRUE))
+  nrc_mat <- as.matrix(read.table('../result/nrc.tsv', header = TRUE))
   H <- Heatmap(nrc_mat)
   clus_colors <- rainbow_hcl(3, c = 90, l = 50)
   nrc_colors <- colorRamp2(seq(0, 1, 0.1), hcl.colors(11, palette = "spectral"))
@@ -37,13 +37,13 @@ plot.nrc <- function(width, height) {
   )
   
   # pdf("nrc.pdf", width = width, height = height)
-  svg("nrc.svg", width = width, height = height)
+  svg("../result/nrc.svg", width = width, height = height)
   draw(a)
   dev.off()
 }
 
 plot.nrc.clus <- function(width, height) {
-  nrc_mat <- as.matrix(read.table('result/nrc.tsv', header = TRUE))
+  nrc_mat <- as.matrix(read.table('../result/nrc.tsv', header = TRUE))
   
   # res <- hclust(dist(nrc_mat), method = "mcquitty")
   # res.pca <- PCA(nrc_mat, ncp = 3, graph = FALSE)
@@ -76,7 +76,6 @@ plot.nrc.clus <- function(width, height) {
   #              main = "Factor map"
   # )
   
-  
   H <- Heatmap(nrc_mat)
   clus_colors <- rainbow_hcl(3, c = 90, l = 50)
   nrc_colors <- colorRamp2(seq(0, 1, 0.1), hcl.colors(11, palette = "spectral"))
@@ -108,15 +107,15 @@ plot.nrc.clus <- function(width, height) {
     # show_column_dend = FALSE
   )
   
-  # pdf("nrc_clustered.pdf", width = width, height = height)
-  svg("nrc_clustered.svg", width = width, height = height)
+  # pdf("../result/nrc_clustered.pdf", width = width, height = height)
+  svg("../result/nrc_clustered.svg", width = width, height = height)
   draw(a)
   dev.off()
 }
 
 plot.nrc.ave.clus <- function(width, height) {
   nrc_mat <-
-    as.matrix(read.table('result/nrc_ave.tsv', header = TRUE))
+    as.matrix(read.table('../result/nrc_ave.tsv', header = TRUE))
   
   H <- Heatmap(nrc_mat)
   
@@ -135,8 +134,8 @@ plot.nrc.ave.clus <- function(width, height) {
     show_row_dend = FALSE,
   )
   
-  # pdf("nrc_clustered_ave.pdf", width = width, height = height)
-  # svg("nrc_clustered_ave.svg", width = width, height = height)
+  # pdf("../result/nrc_clustered_ave.pdf", width = width, height = height)
+  # svg("../result/nrc_clustered_ave.svg", width = width, height = height)
   draw(a)
   # dev.off()
 }
