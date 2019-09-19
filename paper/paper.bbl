@@ -1,4 +1,4 @@
-\begin{thebibliography}{4}
+\begin{thebibliography}{6}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -12,11 +12,25 @@ Harry Clifford, Frank Wessely, Satish Pendurthi, and Richard~D Emes.
   methylation array data.
 \newblock \emph{Frontiers in genetics}, 2:\penalty0 88, 2011.
 
+\bibitem[Hosseini et~al.(2019)Hosseini, Pratas, and Pinho]{hosseini2019ac}
+Morteza Hosseini, Diogo Pratas, and Armando~J Pinho.
+\newblock Ac: A compression tool for amino acid sequences.
+\newblock \emph{Interdisciplinary Sciences: Computational Life Sciences},
+  11\penalty0 (1):\penalty0 68--76, 2019.
+
 \bibitem[Pratas et~al.(2016)Pratas, Pinho, and Ferreira]{pratas2016efficient}
 Diogo Pratas, Armando~J Pinho, and Paulo~JSG Ferreira.
 \newblock Efficient compression of genomic sequences.
 \newblock In \emph{Data Compression Conference (DCC)}, pages 231--240. IEEE,
   2016.
+
+\bibitem[Pratas et~al.(2017)Pratas, Hosseini, and
+  Pinho]{pratas2017substitutional}
+Diogo Pratas, Morteza Hosseini, and Armando~J Pinho.
+\newblock Substitutional tolerant markov models for relative compression of dna
+  sequences.
+\newblock In \emph{International Conference on Practical Applications of
+  Computational Biology \& Bioinformatics}, pages 265--272. Springer, 2017.
 
 \bibitem[Pratas et~al.(2018)Pratas, Silva, and Pinho]{pratas2018comparison}
 Diogo Pratas, Raquel Silva, and Armando Pinho.
