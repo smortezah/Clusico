@@ -46,32 +46,6 @@
 %------------------------------------------------------------------------- 
 \section{Introduction}
 
-\begin{figure*}
-   % \includegraphics[width=10cm]{images/eg1_largeprint.png}
-   \caption{It is often a good idea for the first figure to attempt to
-      encapsulate the article, complementing the abstract.  This figure illustrates
-      the various print and on-screen layouts for which this paper format has
-      been optimized: (a) traditional print format; (b) on-screen
-      single-column format, or large-print paper; (c) full-screen two column, or
-      2-up printing. }
-   \label{fig:teaser}
-\end{figure*}
-
-
-\begin{table}
-   \begin{center}
-      \begin{tabular}{|l|c|}
-         \hline
-         Method & Frobnability           \\
-         \hline\hline
-         Theirs & Frumpy                 \\
-         Yours  & Frobbly                \\
-         Ours   & Makes one's heart Frob \\
-         \hline
-      \end{tabular}
-   \end{center}
-   \caption{Results.   Ours is better.}
-\end{table}
 
 %------------------------------------------------------------------------- 
 \section{Results}
@@ -87,7 +61,9 @@ in which $C (x||y)$ is the information in the sequence $x$ and is obtained by co
 
 In the next step, we used weighted pair group method with arithmetic mean (WPGMA), which is a bottom-up hierarchical clustring method, to classify the sequences based on NRC values. The WPGMA algorithm employs a similarity matrix to construct a rooted tree (dendrogram)~\cite{sokal58a, clifford2011comparison}.
 
-Figure~\ref{fig.nrc}a shows similarity of different sequences (NRC values), obtained by GeCo. As is show, when a sequence is compressed relatively to itself, the NRC value will be approximately 0. These cases are shown with red squares. 
+Figure~\ref{fig.nrc}a shows similarity of different sequences (NRC values), obtained by GeCo. As is show, when a sequence is compressed relatively to itself, the NRC value will be approximately 0. These cases are shown with red squares.
+
+Figure~\ref{fig.nrc}b demonstrates the result of classification of the sequences, which is obtained by WPGMA algorithm. The sequences in Mammalia, Chondrichthyes and Actinopterygii groups are shown with red, green and blue colors, respectively. On top of this figure, the dendrogram is plotted, which shows similarity of different sequences within each group and also, similarity of different groups. This dendrogram shows that Chondrichthyes and Actinopterygii groups, that are both fishes, are more similar to each other, rather than to 
 
 \begin{figure*}
    \includegraphics[width=\textwidth]{fig.pdf}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.4.24)  19 SEP 2019 16:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.4.24)  19 SEP 2019 16:56
 entering extended mode
 **e:/Clusico/paper/paper.tex
 (e:/Clusico/paper/paper.tex
@@ -392,14 +392,14 @@ Package natbib Warning: Citation `Authors06' on page 1 undefined on input line 4
 
 Package natbib Warning: Citation `Mermin89' on page 1 undefined on input line 42.
 
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 78.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 52.
 ("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\t1pcr.fd"
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <6> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 78.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 52.
 
-Overfull \hbox (9.38458pt too wide) in paragraph at lines 80--81
+Overfull \hbox (9.38458pt too wide) in paragraph at lines 54--55
 \T1/ptm/m/n/9 from $\T1/pcr/m/n/9 www . ncbi . nlm . nih . gov / nuccore$\T1/ptm/m/n/9 . The size of these se-quences
  []
 
@@ -409,7 +409,7 @@ pdfTeX warning: pdflatex (file ./fig.pdf): PDF inclusion: found PDF version <1.7
 <fig.pdf, id=1, 1227.83719pt x 615.80063pt>
 File: fig.pdf Graphic file (type pdf)
 <use fig.pdf>
-Package pdftex.def Info: fig.pdf  used on input line 93.
+Package pdftex.def Info: fig.pdf  used on input line 69.
 (pdftex.def)             Requested size: 534.91183pt x 268.27515pt.
 (paper.bbl
 Underfull \hbox (badness 1052) in paragraph at lines 10--14
@@ -426,15 +426,15 @@ Package natbib Warning: There were undefined citations.
 
 ] [2 <./fig.pdf>] (paper.aux) ) 
 Here is how much of TeX's memory you used:
- 4945 strings out of 492946
- 71727 string characters out of 3135613
- 156581 words of memory out of 3000000
- 8717 multiletter control sequences out of 15000+200000
+ 4943 strings out of 492946
+ 71698 string characters out of 3135613
+ 155573 words of memory out of 3000000
+ 8715 multiletter control sequences out of 15000+200000
  65455 words of font info for 96 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 49i,11n,42p,516b,276s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 49i,11n,42p,577b,276s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/symbol/usyr.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on paper.pdf (2 pages, 977577 bytes).
+Output written on paper.pdf (2 pages, 977003 bytes).
 PDF statistics:
  63 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
