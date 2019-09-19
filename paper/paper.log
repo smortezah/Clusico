@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.4.24)  19 SEP 2019 13:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.4.24)  19 SEP 2019 13:20
 entering extended mode
-**e:/Clusico/paper/recpad_review.tex
-(e:/Clusico/paper/recpad_review.tex
+**e:/Clusico/paper/paper.tex
+(e:/Clusico/paper/paper.tex
 LaTeX2e <2018-12-01>
 (recpad2k.cls
 Document Class: recpad2k 2010/01/29 RecPad Proceedings. v0.06
@@ -277,8 +277,8 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 21.
 \bmv@box inst2 =\box43
 \bmv@box instFN2 =\box44
- (recpad_review.aux)
-\openout1 = `recpad_review.aux'.
+ (paper.aux)
+\openout1 = `paper.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
 LaTeX Font Info:    ... okay on input line 41.
@@ -396,14 +396,7 @@ LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <7> not available
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <11> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 45.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 50.
-
-
-Package natbib Warning: Citation `Authors06' on page 1 undefined on input line 50.
-
-
-Package natbib Warning: Citation `Mermin89' on page 1 undefined on input line 50.
-
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 53.
 
 Overfull \hbox (0.36592pt too wide) in paragraph at lines 63--67
 \T1/ptm/m/n/9 The pro-ceed-ings of Rec-Pad (the Por-tuguese Con-fer-ence on Pat-tern Recog-
@@ -415,69 +408,25 @@ File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 73.
-<images/eg1_largeprint.png, id=1, 467.7475pt x 707.64375pt>
-File: images/eg1_largeprint.png Graphic file (type png)
-<use images/eg1_largeprint.png>
-Package pdftex.def Info: images/eg1_largeprint.png  used on input line 93.
-(pdftex.def)             Requested size: 284.52756pt x 430.4743pt.
-
-
-Package natbib Warning: Citation `Alpher02' on page 1 undefined on input line 111.
-
-
-Package natbib Warning: Citation `Alpher03' on page 1 undefined on input line 112.
-
-
-Package natbib Warning: Citation `Alpher04' on page 1 undefined on input line 113.
-
-
-Package natbib Warning: Citation `Alpher03' on page 1 undefined on input line 115.
-
-
-Package natbib Warning: Citation `Alpher03' on page 1 undefined on input line 116.
-
-
-Package natbib Warning: Citation `Alpher03' on page 1 undefined on input line 123.
-
-
-Package natbib Warning: Citation `Alpher02' on page 1 undefined on input line 123.
-
-
-Package natbib Warning: Citation `Authors06b' on page 1 undefined on input line 123.
-
-
-Package natbib Warning: Citation `Authors06' on page 1 undefined on input line 123.
-
-
-Package natbib Warning: Citation `Mermin89' on page 1 undefined on input line 190.
-
-
-Package natbib Warning: Citation `Authors06' on page 1 undefined on input line 199.
-
-[1{C:/Users/Utilizador/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
+ [1{C:/Users/Utilizador/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
 
-] [2 <./images/eg1_largeprint.png>]
-No file recpad_review.bbl.
+] (paper.bbl) [2
 
-Package natbib Warning: There were undefined citations.
-
-[3
-
-] (recpad_review.aux) ) 
+] (paper.aux) ) 
 Here is how much of TeX's memory you used:
- 4938 strings out of 492946
- 71759 string characters out of 3135613
- 161587 words of memory out of 3000000
- 8713 multiletter control sequences out of 15000+200000
- 68105 words of font info for 94 fonts, out of 3000000 for 9000
+ 4944 strings out of 492946
+ 71668 string characters out of 3135613
+ 161812 words of memory out of 3000000
+ 8718 multiletter control sequences out of 15000+200000
+ 71448 words of font info for 98 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 49i,11n,42p,524b,276s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 49i,11n,42p,516b,297s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on recpad_review.pdf (3 pages, 155416 bytes).
+Output written on paper.pdf (2 pages, 88444 bytes).
 PDF statistics:
- 42 PDF objects out of 1000 (max. 8388607)
+ 38 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
