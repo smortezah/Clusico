@@ -35,51 +35,65 @@
 \maketitle
 
 \begin{abstract}
-This document demonstrates the format requirements for papers submitted
-to the Portuguese Conference on Pattern Recognition.  The format is designed for
-easy on-screen reading, and to print well at one or two pages per sheet.
-Additional features include: pop-up annotations for
-citations~\cite{Authors06,Mermin89}; a margin ruler for reviewing; and a
-greatly simplified way of entering multiple authors and institutions.
+   This document demonstrates the format requirements for papers submitted
+   to the Portuguese Conference on Pattern Recognition.  The format is designed for
+   easy on-screen reading, and to print well at one or two pages per sheet.
+   Additional features include: pop-up annotations for
+   citations~\cite{Authors06,Mermin89}; a margin ruler for reviewing; and a
+   greatly simplified way of entering multiple authors and institutions.
 \end{abstract}
 
 %------------------------------------------------------------------------- 
 \section{Introduction}
 
- \begin{figure*}
-% \includegraphics[width=10cm]{images/eg1_largeprint.png}
- \caption{It is often a good idea for the first figure to attempt to
- encapsulate the article, complementing the abstract.  This figure illustrates
- the various print and on-screen layouts for which this paper format has
- been optimized: (a) traditional print format; (b) on-screen
- single-column format, or large-print paper; (c) full-screen two column, or
- 2-up printing. }
-\label{fig:teaser}
+\begin{figure*}
+   % \includegraphics[width=10cm]{images/eg1_largeprint.png}
+   \caption{It is often a good idea for the first figure to attempt to
+      encapsulate the article, complementing the abstract.  This figure illustrates
+      the various print and on-screen layouts for which this paper format has
+      been optimized: (a) traditional print format; (b) on-screen
+      single-column format, or large-print paper; (c) full-screen two column, or
+      2-up printing. }
+   \label{fig:teaser}
 \end{figure*}
-  
+
 
 \begin{table}
-\begin{center}
-\begin{tabular}{|l|c|}
-\hline
-Method & Frobnability \\
-\hline\hline
-Theirs & Frumpy \\
-Yours & Frobbly \\
-Ours & Makes one's heart Frob\\
-\hline
-\end{tabular}
-\end{center}
-\caption{Results.   Ours is better.}
+   \begin{center}
+      \begin{tabular}{|l|c|}
+         \hline
+         Method & Frobnability           \\
+         \hline\hline
+         Theirs & Frumpy                 \\
+         Yours  & Frobbly                \\
+         Ours   & Makes one's heart Frob \\
+         \hline
+      \end{tabular}
+   \end{center}
+   \caption{Results.   Ours is better.}
 \end{table}
 
 %------------------------------------------------------------------------- 
 \section{Results}
-The proposed method is implemented and publicly available at https://github.com/smortezah/Clusico, under GPLv3 license. The machine used for the tests had an 8-core 3.40 GHz Intel\textsuperscript{\scriptsize\textregistered} Core{\scriptsize\texttrademark} i7-6700 CPU with 32 GB RAM.
+The proposed method is implemented and publicly available at \url{github.com/smortezah/Clusico}, under GPLv3 license. The machine used for the tests had an 8-core 3.40 GHz Intel\textsuperscript{\scriptsize\textregistered} Core{\scriptsize\texttrademark} i7-6700 CPU with 32~GB RAM.
 
-For the experiments, we have used 30 mitochondrial DNA (mtDNA) sequences from three groups of Actinopterygii (Ray-finned fishes), Chondrichthyes (Cartilaginous fishes) and Mammalia, that can be downloaded from https://www.ncbi.nlm.nih.gov/nuccore. The size of these sequences varies from 16,189 to 18,431 bases.
+For the experiments, we have used 30 mitochondrial DNA (mtDNA) sequences from three groups of Actinopterygii (Ray-finned fishes), Chondrichthyes (Cartilaginous fishes) and Mammalia, that can be downloaded from \url{www.ncbi.nlm.nih.gov/nuccore}. The size of these sequences varies from 16,189 to 18,431 bases.
 
-In order to classify the sequences, we first ran GeCo on all sequences, considering them as references as well as targets. As the result, normalized relative compression (NRC) values were obtained, that can be calculated as
+In order to classify the sequences, we first ran GeCo~\cite{pratas2016efficient} on all sequences, considering them as references as well as targets, to find similarity of sequences to each other. For measuring the similarity, normalized relative compression (NRC) were used, that can be calculated as~\cite{pratas2018comparison}
+\begin{equation}
+   \mathrm{NRC} (x||y) = \frac{C (x||y)}{|x|\, \log_2 |\Phi|},
+\end{equation}
+in which $C (x||y)$ is the information in the sequence $x$ and is obtained by compressing $x$ relatively to the sequence $y$, $|x|$ is the size of sequence $x$ and $|\Phi|$ is the cardinality of input DNA sequences, i.e. $ \mathrm{size}(\{A, C, G, T\}) = 4 $. Values of NRC falls within the range $(0, 1]$ and the more similar two sequences are, the less is this value.
+
+In the next step, we used weighted pair group method with arithmetic mean (WPGMA), which is a bottom-up hierarchical clustring method, to classify the sequences based on NRC values. The WPGMA algorithm employs a similarity matrix to construct a rooted tree (dendrogram)~\cite{sokal58a, clifford2011comparison}.
+
+Figure~\ref{fig.nrc}a shows similarity of different sequences (NRC values), obtained by GeCo. As is show, when a sequence is compressed relatively to itself, the NRC value will be approximately 0. These cases are shown with red squares. 
+
+\begin{figure*}
+   \includegraphics[width=\textwidth]{fig.pdf}
+   \caption{NRC.}
+   \label{fig.nrc}
+\end{figure*}
 
 
 \bibliography{ref}

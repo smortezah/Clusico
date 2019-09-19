@@ -1,0 +1,33 @@
+\begin{thebibliography}{4}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Clifford et~al.(2011)Clifford, Wessely, Pendurthi, and
+  Emes]{clifford2011comparison}
+Harry Clifford, Frank Wessely, Satish Pendurthi, and Richard~D Emes.
+\newblock Comparison of clustering methods for investigation of genome-wide
+  methylation array data.
+\newblock \emph{Frontiers in genetics}, 2:\penalty0 88, 2011.
+
+\bibitem[Pratas et~al.(2016)Pratas, Pinho, and Ferreira]{pratas2016efficient}
+Diogo Pratas, Armando~J Pinho, and Paulo~JSG Ferreira.
+\newblock Efficient compression of genomic sequences.
+\newblock In \emph{Data Compression Conference (DCC)}, pages 231--240. IEEE,
+  2016.
+
+\bibitem[Pratas et~al.(2018)Pratas, Silva, and Pinho]{pratas2018comparison}
+Diogo Pratas, Raquel Silva, and Armando Pinho.
+\newblock Comparison of compression-based measures with application to the
+  evolution of primate genomes.
+\newblock \emph{Entropy}, 20\penalty0 (6):\penalty0 393, 2018.
+
+\bibitem[Sokal and Michener(1958)]{sokal58a}
+R.~R. Sokal and C.~D. Michener.
+\newblock A statistical method for evaluating systematic relationships.
+\newblock \emph{University of Kansas Science Bulletin}, 38:\penalty0
+  1409--1438, 1958.
+
+\end{thebibliography}
