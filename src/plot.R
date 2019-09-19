@@ -30,10 +30,14 @@ plot.nrc <- function(width, height) {
   a <- Heatmap(
     nrc_mat,
     row_names_side = c("left"),
+    # column_names_side = c("top"),
     name = "NRC",
     col = nrc_colors,
+    column_title = c(' '),
+    column_title_side = c('bottom'),
     cluster_rows = FALSE,
-    cluster_columns = FALSE
+    cluster_columns = FALSE,
+    # show_heatmap_legend = FALSE
   )
   
   # pdf("nrc.pdf", width = width, height = height)
@@ -88,6 +92,7 @@ plot.nrc.clus <- function(width, height) {
   a <- Heatmap(
     nrc_mat,
     row_names_side = c("left"),
+    # column_names_side = c("top"),
     name = "NRC",
     col = nrc_colors,
     # clustering_method_rows = "mcquitty",
@@ -98,18 +103,20 @@ plot.nrc.clus <- function(width, height) {
     row_split = 3,
     column_split = 3,
     row_title = c('Mammalia', 'Chondrichthyes', 'Actinopterygii'),
+    # row_title_side = c('right'),
     column_title = c('Mammalia', 'Chondrichthyes', 'Actinopterygii'),
+    column_title_side = c('bottom'),
     row_names_gp = gpar(col = clus_colors),
     column_names_gp = gpar(col = clus_colors),
     # row_split = paste0("pam", pa$clustering),
     # column_split = paste0("pam", pa$clustering),
-    show_row_dend = FALSE,
-    # show_column_dend = FALSE
+    # show_row_dend = FALSE,
+    show_column_dend = FALSE
   )
   
   # pdf("../result/nrc_clustered.pdf", width = width, height = height)
   svg("../result/nrc_clustered.svg", width = width, height = height)
-  draw(a)
+  draw(a, heatmap_legend_side = "right")
   dev.off()
 }
 
@@ -135,11 +142,11 @@ plot.nrc.ave.clus <- function(width, height) {
   )
   
   # pdf("../result/nrc_clustered_ave.pdf", width = width, height = height)
-  # svg("../result/nrc_clustered_ave.svg", width = width, height = height)
+  svg("../result/nrc_clustered_ave.svg", width = width, height = height)
   draw(a)
-  # dev.off()
+  dev.off()
 }
 
 plot.nrc(8, 7)
-plot.nrc.clus(8, 8)
+plot.nrc.clus(8, 7)
 # plot.nrc.ave.clus(11, 10)

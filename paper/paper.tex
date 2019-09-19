@@ -51,7 +51,7 @@
 \section{Results}
 The proposed method is implemented and publicly available at \url{github.com/smortezah/Clusico}, under GPLv3 license. The machine used for the tests had an 8-core 3.40 GHz Intel\textsuperscript{\scriptsize\textregistered} Core{\scriptsize\texttrademark} i7-6700 CPU with 32~GB RAM.
 
-For the experiments, we have used 30 mitochondrial DNA (mtDNA) sequences from three groups of Actinopterygii (Ray-finned fishes), Chondrichthyes (Cartilaginous fishes) and Mammalia, that can be downloaded from \url{www.ncbi.nlm.nih.gov/nuccore}. The size of these sequences varies from 16,189 to 18,431 bases.
+For the experiments, we have used 30 mitochondrial DNA (mtDNA) sequences from three groups of Actinopterygii (Ray-finned fishes), Chondrichthyes (Cartilaginous fishes) and Mammalia, that can be downloaded from \url{www.ncbi.nlm.nih.gov/nuccore}. Each groups contains 10 sequences and their sizes varies from 16,189 to 18,431 bases.
 
 In order to classify the sequences, we first ran GeCo~\cite{pratas2016efficient} on all sequences, considering them as references as well as targets, to find similarity of sequences to each other. For measuring the similarity, normalized relative compression (NRC) were used, that can be calculated as~\cite{pratas2018comparison}
 \begin{equation}
@@ -63,7 +63,7 @@ In the next step, we used weighted pair group method with arithmetic mean (WPGMA
 
 Figure~\ref{fig.nrc}a shows similarity of different sequences (NRC values), obtained by GeCo. As is show, when a sequence is compressed relatively to itself, the NRC value will be approximately 0. These cases are shown with red squares.
 
-Figure~\ref{fig.nrc}b demonstrates the result of classification of the sequences, which is obtained by WPGMA algorithm. The sequences in Mammalia, Chondrichthyes and Actinopterygii groups are shown with red, green and blue colors, respectively. On top of this figure, the dendrogram is plotted, which shows similarity of different sequences within each group and also, similarity of different groups. This dendrogram shows that Chondrichthyes and Actinopterygii groups, that are both fishes, are more similar to each other, rather than to 
+Figure~\ref{fig.nrc}b demonstrates the result of classification of the sequences, which is obtained by WPGMA algorithm. The sequences in Mammalia, Chondrichthyes and Actinopterygii groups are shown with red, green and blue colors, respectively. On top of this figure, the dendrogram is plotted, which shows similarity of different sequences within each group and also, similarity of different groups. As it is show, the two groups of Chondrichthyes and Actinopterygii, that are fishes, are more similar to each other, in comparison with Mammalia.
 
 \begin{figure*}
    \includegraphics[width=\textwidth]{fig.pdf}
