@@ -8,13 +8,17 @@
 
 % Enter the paper's authors in order
 \addauthor{Morteza Hosseini}{seyedmorteza@ua.pt}{1}
-\addauthor{Diogo Pratas}{pratas@ua.pt}{1}
+\addauthor{Diogo Pratas\textsuperscript{\scriptsize 1,}}{pratas@ua.pt}{2}
 \addauthor{Armando J. Pinho}{ap@ua.pt}{1}
 
 % Enter the institutions
 \addinstitution{
- IEETA/DETI,\\
- University of Aveiro
+   IEETA/DETI,\\
+   University of Aveiro
+}
+\addinstitution{
+   DV,\\
+   University of Helsinki.
 }
 
 \runninghead{Student, Prof, Collaborator}{RECPAD Author Guidelines}
@@ -48,7 +52,7 @@ In the following sections, we describe the proposed method in detail. Then, we d
 
 %------------------------------------------------------------------------- 
 \section{Methods}
-In order to classify the sequences, we first find similarity between sequences. For this purpose, we use GeCo~\cite{pratas2016efficient} to compress all sequences, considering them as references as well as targets. The compression is an optimal approximation of Kolmogorov complexity, which is not computable, and can yield the information (complexity) included in a sequence~\cite{kolmogorov1965three}. For measuring the similarity, normalized relative compression is used, that can be calculated as~\cite{pratas2018comparison}
+In order to classify the sequences, we first find similarity between sequences. For this purpose, we use GeCo~\cite{pratas2016efficient} to compress all sequences, considering them as references as well as targets. The compression is an approximation of Kolmogorov complexity, which is not computable, and can yield the information (complexity) included in a sequence~\cite{kolmogorov1965three}. For measuring the similarity, normalized relative compression is used, that can be calculated as~\cite{pratas2018comparison}
 \begin{equation}
    \mathrm{NRC} (x||y) = \frac{C (x||y)}{|x|\, \log_2 |\Phi|},
 \end{equation}
