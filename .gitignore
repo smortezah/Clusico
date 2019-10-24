@@ -6,3 +6,7 @@ paper/*.bbl
 paper/*.blg
 paper/*.log
 paper/*.synctex.gz
+AFproject/assembled-ecoli
+AFproject/assembled-plants
+AFproject/protein-low-ident
+AFproject/unsimulated-yersinia
